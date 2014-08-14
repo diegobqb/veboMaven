@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.connection.driver_class">
+            org.apache.derby.jdbc.EmbeddedDriver
+        </property>
+    <property name="hibernate.connection.url">
+            jdbc:derby:dados/vebo;create=true
+        </property>
+    <property name="hibernate.dialect">
+            org.hibernate.dialect.DerbyDialect
+        </property>
+    <property name="hibernate.connection.username"/>
+    <property name="hibernate.connection.password"/>
+    <property name="hibernate.show_sql">false</property>
+    <property name="hibernate.format_sql">false</property>
+    <!-- Drop and re-create the database schema on startup -->
+    <property name="hbm2ddl.auto">update</property>
+    <!-- Mapeamento das Classes -->
+    <mapping class="br.com.vebo.dados.mapeamento.Material"/>
+    <mapping class="br.com.vebo.dados.mapeamento.Perfume"/>
+    <mapping class="br.com.vebo.dados.mapeamento.Calculo"/>
+    <mapping class="br.com.vebo.dados.mapeamento.UtilizacaoMaterial"/>
+    <mapping class="br.com.vebo.dados.mapeamento.Revendedor"/>
+    <mapping class="br.com.vebo.dados.mapeamento.Pedido"/>
+    <mapping class="br.com.vebo.dados.mapeamento.Configuracao"/>
+    <mapping class="br.com.vebo.dados.mapeamento.Estoque"/>
+  </session-factory>
+</hibernate-configuration>
